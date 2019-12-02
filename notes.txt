@@ -1,0 +1,36 @@
+// Dynamically add class
+:class="{red: name.length >= 5}"
+:class="[name.length >=5 ? 'red' : null]"
+
+// Put text or htm inside
+<h1 v-text="name"></h1>
+<h1 v-html="name"></h1>
+
+// Render once, does not update
+<p v-once></p>
+
+// Filters are usable in two places: mustache interpolations and v-bind expressions
+<!-- in mustaches -->
+{{ message | capitalize }}
+
+<!-- in v-bind -->
+<div v-bind:id="rawId | formatId"></div>
+
+// key in v-for
+<p v-for="(answer, index) in answers" :key="index">
+
+// watch method
+// watch changes of props
+watch: {
+    func() {
+        ...
+    }
+}
+
+watch: {
+    immediate: true,
+    func() {
+        ...
+    }
+}
+
